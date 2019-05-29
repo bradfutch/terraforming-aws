@@ -95,6 +95,23 @@ output "pas_bucket_iam_instance_profile_name" {
   value = "${module.pas.pas_bucket_iam_instance_profile_name}"
 }
 
+output "rds_subnet_ids" {
+  value = "${module.infra.public_subnet_ids}"
+}
+
+output "rds_subnets" {
+  value = "${module.infra.public_subnet_ids}"
+}
+
+output "rds_subnet_availability_zones" {
+  value = "${module.infra.public_subnet_availability_zones}"
+}
+
+output "rds_subnet_cidrs" {
+  value = "${module.infra.public_subnet_cidrs}"
+}
+
+
 output "rds_address" {
   value = "${module.rds.rds_address}"
 }
