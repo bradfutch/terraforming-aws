@@ -50,10 +50,11 @@ resource "aws_subnet" "public_subnets" {
       map("kubernetes.io/role/elb", "1"), 
       map("SubnetType", "Utility"))}"
 
+  # BAF - this started giving errors, not sure why
   # Ignore additional tags that are added for specifying clusters.
-  lifecycle {
-    ignore_changes = ["tags.%", "tags.kubernetes"]
-  }
+  #lifecycle {
+    #ignore_changes = ["tags.%", "tags.kubernetes"]
+  #}
 }
 
 resource "aws_route_table_association" "route_public_subnets" {
